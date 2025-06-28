@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SysCitasApplication<sys-citas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sisol.sys_citas.SysCitasApplication",
+            "projectName": "sys-citas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

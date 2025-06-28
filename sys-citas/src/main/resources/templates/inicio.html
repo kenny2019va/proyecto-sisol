@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+
+        <p th:text="${usuarioSesion.nombres}">nombre</p>
+        <p th:text="${usuarioSesion.rol.name()}">rol</p>
+        <p th:text="${usuarioSesion.id}">idUsuario</p>    
+
+    </div>
+
+    <a th:href="@{/auth/logout}">logout</a>
+    
+</body>
+</html>

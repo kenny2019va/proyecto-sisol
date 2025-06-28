@@ -56,6 +56,7 @@ public class AutorizacionInterceptor implements HandlerInterceptor {
         }
 
         if (uri.startsWith("/administrativo") && usuario.getRol() != Rol.ROLE_PERSONAL_ADMINISTRATIVO) {
+            response.sendRedirect("/auth/login");
             return false;
         }
         

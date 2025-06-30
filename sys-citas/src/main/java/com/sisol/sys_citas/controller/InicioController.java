@@ -1,4 +1,4 @@
-package com.sisol.sys_citas.controllers;
+package com.sisol.sys_citas.controller;
 
 import org.springframework.stereotype.Controller;
 
@@ -15,7 +15,4 @@ public class InicioController {
     public String mostrarInicio(){
         return "inicio";
     }
-
-
-  
 }

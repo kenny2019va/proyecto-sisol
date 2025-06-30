@@ -1,4 +1,4 @@
-package com.sisol.sys_citas.controllers;
+package com.sisol.sys_citas.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,7 +45,6 @@ public class AutenticacionController {
         }
 
     }
-
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {

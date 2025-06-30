@@ -1,4 +1,4 @@
-package com.sisol.sys_citas.controllers;
+package com.sisol.sys_citas.controller;
 
 import java.util.HashMap;
 import java.util.Map;

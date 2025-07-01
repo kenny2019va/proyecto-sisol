@@ -14,7 +14,6 @@ public class UsuarioSesionAdvice {
 
     @ModelAttribute
     public void mantenerSesionUsuario(Model model, HttpSession session){
-        
         //obtener la session del usuario
         UsuarioSesionDTO usuarioSesion =(UsuarioSesionDTO) session.getAttribute("usuario");
         

@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.sisol.sys_citas.exceptions.AutenticacionException;
 import com.sisol.sys_citas.forms.LoginForm;
 import com.sisol.sys_citas.security.AutenticacionService;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller

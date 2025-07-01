@@ -8,11 +8,9 @@
 <body>
 
     <div>
-
         <p th:text="${usuarioSesion.nombres}">nombre</p>
         <p th:text="${usuarioSesion.rol.name()}">rol</p>
         <p th:text="${usuarioSesion.id}">idUsuario</p>    
-
     </div>
     <a th:href="@{/auth/logout}">logout</a>
 </body>

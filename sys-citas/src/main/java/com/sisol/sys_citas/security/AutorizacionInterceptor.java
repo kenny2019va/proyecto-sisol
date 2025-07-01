@@ -5,8 +5,9 @@ import java.util.Optional;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import com.sisol.sys_citas.dto.UsuarioSesionDTO;
 import com.sisol.sys_citas.enums.Rol;
-import com.sisol.sys_citas.viewmodels.UsuarioSesion;
+
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,7 +37,7 @@ public class AutorizacionInterceptor implements HandlerInterceptor {
         }
 
         // obtener el objeto usuario de la sesion vigente
-        UsuarioSesion usuario = (UsuarioSesion) optional.get().getAttribute("usuario");
+        UsuarioSesionDTO usuario = (UsuarioSesionDTO) optional.get().getAttribute("usuario");
        
         //ruta comun para los 3
         if (uri.startsWith("/inicio") && (usuario.getRol()

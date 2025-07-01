@@ -1,56 +1,56 @@
 package com.sisol.sys_citas.security;
 
+import java.sql.SQLException;
 
+import javax.management.RuntimeErrorException;
 
+import org.apache.ibatis.exceptions.PersistenceException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
+import com.sisol.sys_citas.dto.UsuarioSesionDTO;
+import com.sisol.sys_citas.exceptions.AutenticacionException;
 import com.sisol.sys_citas.forms.LoginForm;
-
-
-import com.sisol.sys_citas.viewmodels.UsuarioSesion;
+import com.sisol.sys_citas.mapper.AuthMapper;
 
 @Service
 public class AutenticacionService {
 
-    
-    
+    private final AuthMapper authMapper;
 
+    public AutenticacionService(AuthMapper authMapper) {
+        this.authMapper = authMapper;
+    }
 
     @Transactional
-    public UsuarioSesion login(LoginForm loginForm) {
-        return null;
+    public UsuarioSesionDTO login(LoginForm loginForm) {
 
-        // utilizar un @Query
-        // Optional<Usuario> optional = usuarioRepository.findByCorreo(loginForm.getCorreo());
+        try {
 
-        // si el usuario no existe o la contraseña ingresada no coincide con la del
-        // usuario de la bd
-        // if (optional.isEmpty()
-        //         || !PasswordHashUtils.checkPassword(loginForm.getPassword(), optional.get().getPassword())) {
-        //     throw new AutenticacionException("Correo y/o contraseña incorrecto");
-        // }
-        // capturar el usuario de la bd
-        
-        // if (optional.isEmpty() || !optional.get().getPassword().equals(loginForm.getPassword())) {
-        //     throw new AutenticacionException("Correo y/o contraseña incorrecto");   
-        // }
-        
-        // Usuario usuario = optional.get();
+            UsuarioSesionDTO usuario = authMapper.verificarCorreo(loginForm.getCorreo());
 
+            if (!usuario.getContrasenia().equals(loginForm.getPassword())) {
+                throw new AutenticacionException("Contraseña incorrecta");
+            }
 
-        // si  la cuenta del usuario esta inactivo
-        // if (!usuario.isActivo()) {
-        //     throw new AutenticacionException("Su cuenta se encuentra inactiva");    
-        // }
-        // // crear un objeto con datos necesario para la sesion
-        // UsuarioSesion usuarioSesion = new UsuarioSesion();
-        // usuarioSesion.setId(usuario.getId());
-        // usuarioSesion.setNombres(usuario.getNombres());
-        // usuarioSesion.setRol(usuario.getRol());
-        // return usuarioSesion;
-     }
- 
+            // if (PasswordHashUtils.checkPassword(usuario.getContrasenia(),
+            // loginForm.getPassword())) {
+
+            // throw new AutenticacionException("Correo y/o contraseña incorrectos");
+
+            // }
+
+            return usuario;
+
+        } catch (DataAccessException exsql) {
+            throw new AutenticacionException(exsql.getCause().getMessage());
+        } catch (AutenticacionException exauth) {
+            throw exauth;
+        } catch (Exception exp) {
+            throw new AutenticacionException(exp.getMessage());
+        }
+
+    }
 
 }

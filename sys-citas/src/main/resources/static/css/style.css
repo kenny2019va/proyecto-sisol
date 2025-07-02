@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
+
+/* =====================
+   Paleta de colores base
+   ===================== */
+:root {
+  --color-blanco: #FFFFFF;
+  --color-beige: #F0FAF9;
+  --color-azul: #1A4A84;
+  --color-turquesa: #00A39C;
+  --color-naranja: #FCA700;
+  --color-negro: #000000;
+}
+
+/* =====================
+   Estilos globales
+   ===================== */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background: var(--color-blanco);
+  color: var(--color-negro);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-azul);
+  font-family: 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.5rem; font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p, li, a, label, input, button {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--color-negro);
+  font-weight: 400;
+}
+
+a, .btn-link, .nav-link {
+  font-weight: 500;
+}
+
+.btn, .btn-primary, .btn-outline-primary, .btn-outline-danger {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-azul);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-turquesa);
+}
+
+section.bg-secondary, .bg-secondary {
+  background: var(--color-beige) !important;
+}
+
+.btn-primary, .btn.btn-outline-primary {
+  background: var(--color-azul);
+  color: var(--color-blanco);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.btn-primary:hover, .btn.btn-outline-primary:hover {
+  background: #153a66;
+}
+
+/* Detalles/adornos */
+.badge-naranja, .adornment-naranja, .btn-adornment {
+  background: var(--color-naranja) !important;
+  color: var(--color-negro) !important;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.2em 0.6em;
+}
+
+.btn-outline-danger {
+  border: 1.5px solid var(--color-naranja);
+  color: var(--color-naranja);
+  background: transparent;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-danger:hover {
+  background: var(--color-naranja);
+  color: var(--color-negro);
+}
+
+/* Iconos lineales en turquesa */
+.bi, .icon {
+  color: var(--color-turquesa);
+}
+
+/* Bordes y marcos para imágenes */
+img, .img {
+  border-radius: 0.5rem;
+  background: var(--color-blanco);
+}
+
+/* Sombra estándar */
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important;
+}
+
+/* Espaciados generales */
+.container, .container-fluid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Márgenes y paddings */
+section, .section {
+  margin-bottom: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+} 

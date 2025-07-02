@@ -1,0 +1,58 @@
+/* Estilos particulares para inicio.html */
+.hero-cards-container {
+    position: absolute;
+    left: 50%;
+    bottom: -60px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.hero-section {
+    position: relative;
+    margin-bottom: 100px;
+}
+.hero-carousel img {
+    height: 400px;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .hero-cards-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        bottom: -180px;
+    }
+} 
+
+/* Overlay y textos para hero slider */
+.hero-carousel .carousel-caption.hero-overlay {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  background: linear-gradient(180deg, rgba(26,74,132,0.85) 60%, rgba(0,163,156,0.7) 100%);
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  text-align: left;
+}
+.hero-carousel .carousel-caption.hero-overlay h5 {
+  color: #fff;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .hero-carousel .carousel-caption.hero-overlay {
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+  .hero-carousel .carousel-caption.hero-overlay h5 {
+    font-size: 1.2rem;
+  }
+} 

@@ -1,0 +1,124 @@
+/* Navbar fijo y sombra */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--color-blanco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Hamburger solo en mobile */
+.hamburger {
+  display: none;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-right: 8px;
+}
+
+/* Off-canvas container y backdrop */
+.off-canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1050;
+}
+.off-canvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+.off-canvas-container.active .off-canvas-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Off-canvas panel */
+.off-canvas-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 280px;
+  max-width: 75vw;
+  background: var(--color-blanco);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease-in-out, right 0.3s;
+  z-index: 2;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+.off-canvas-container.active .off-canvas-panel {
+  right: 0;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Animación de entrada */
+.off-canvas-panel {
+  transform: translateX(100%);
+}
+.off-canvas-container.active .off-canvas-panel {
+  transform: translateX(0);
+}
+
+/* Close button */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-azul);
+  cursor: pointer;
+}
+
+/* Avatar circular */
+.user-section img {
+  border-radius: 50%;
+  border: 2px solid var(--color-beige);
+}
+
+/* Mobile menu items */
+.mobile-menu .nav-link {
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
+  color: var(--color-azul);
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-menu .nav-link:hover {
+  background: var(--color-beige);
+  color: var(--color-turquesa);
+}
+
+/* Media queries */
+@media (min-width: 769px) {
+  .off-canvas-container { display: none !important; }
+  .hamburger { display: none !important; }
+  .nav-menu { display: flex !important; }
+}
+@media (max-width: 768px) {
+  .nav-menu { display: none !important; }
+  .hamburger { display: block !important; }
+  .off-canvas-container { display: block !important; }
+}
+
+/* Prevenir scroll cuando off-canvas está activo */
+body.off-canvas-open {
+  overflow: hidden;
+} 

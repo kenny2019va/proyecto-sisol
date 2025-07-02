@@ -3,6 +3,7 @@ package com.sisol.sys_citas.security.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.lang.NonNull;
 
 import com.sisol.sys_citas.security.AutorizacionInterceptor;
 
@@ -18,7 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     // registar el interceptor
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(@NonNull InterceptorRegistry registry) {
         registry.addInterceptor(autorizacionInterceptor)
         
         .addPathPatterns("/**")

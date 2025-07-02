@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISOL SALUD</title>
+    <!-- Bootstrap 5.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/Inicio.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <!-- Modal Login -->
+    <div th:replace="fragments/login :: loginModal"></div>
+
+    <!-- Hero Section con Slider -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/hero-action.webp" class="d-block w-100" alt="SISOL en Acción: Miles se Benefician de Jornadas de Salud Integrales">
+                    <div class="carousel-caption d-none d-md-block hero-overlay">
+                        <h5>SISOL en Acción: Miles se Benefician de Jornadas de Salud Integrales</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/hero-organization.webp" class="d-block w-100" alt="Organización y Servicio: Así Trabaja SISOL por la Salud Comunitaria">
+                    <div class="carousel-caption d-none d-md-block hero-overlay">
+                        <h5>Organización y Servicio: Así Trabaja SISOL por la Salud Comunitaria</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/hero-prevention.webp" class="d-block w-100" alt="Prevención es Salud: SISOL Ofrece Chequeos Clave para la Población">
+                    <div class="carousel-caption d-none d-md-block hero-overlay">
+                        <h5>Prevención es Salud: SISOL Ofrece Chequeos Clave para la Población</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <!-- Cards sobrepuestas -->
+        <div class="hero-cards-container">
+            <div class="card shadow" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Lorem</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn btn-primary">Lorem</a>
+                </div>
+            </div>
+            <div class="card shadow" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Lorem</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn btn-primary">Lorem</a>
+                </div>
+            </div>
+            <div class="card shadow" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Lorem</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn btn-primary">Lorem</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/navbar.js" defer></script>
+    <script src="/js/login.js" defer></script>
+</body>
+</html>

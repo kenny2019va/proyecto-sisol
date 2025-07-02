@@ -18,7 +18,7 @@ public class UsuarioSesionAdvice {
         UsuarioSesionDTO usuarioSesion =(UsuarioSesionDTO) session.getAttribute("usuario");
         
         if (usuarioSesion != null) {
-            model.addAttribute("usuarioSesion", usuarioSesion);    
+            model.addAttribute("usuario", usuarioSesion);    
         }
     }
     

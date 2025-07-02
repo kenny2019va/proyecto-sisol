@@ -1,13 +1,8 @@
 package com.sisol.sys_citas.security;
 
-import java.sql.SQLException;
-
-import javax.management.RuntimeErrorException;
-
-import org.apache.ibatis.exceptions.PersistenceException;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.dao.DataAccessException;
 
 import com.sisol.sys_citas.dto.UsuarioSesionDTO;
 import com.sisol.sys_citas.exceptions.AutenticacionException;

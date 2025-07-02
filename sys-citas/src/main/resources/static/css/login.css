@@ -1,0 +1,41 @@
+/* Estilos personalizados para el modal de login */
+.login-modal-content {
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(26,74,132,0.10);
+  background: #fff;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+#loginModalLabel {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--color-azul);
+  font-size: 1.5rem;
+}
+#loginModal img {
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+#loginForm .form-label {
+  font-weight: 500;
+  color: var(--color-azul);
+}
+#loginForm .form-control {
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--color-beige);
+  font-size: 1rem;
+  font-family: 'Inter', Arial, sans-serif;
+}
+#loginForm .form-control:focus {
+  border-color: var(--color-azul);
+  box-shadow: 0 0 0 2px rgba(26,74,132,0.10);
+}
+#loginForm .btn-primary {
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.6rem 0;
+}
+#loginForm .btn-outline-primary {
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.6rem 0;
+} 

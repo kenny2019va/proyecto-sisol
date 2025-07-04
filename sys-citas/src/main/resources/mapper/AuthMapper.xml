@@ -12,4 +12,19 @@
   }
 </select>
 
+<!-- Obtener nombre completo de paciente -->
+<select id="obtenerNombrePaciente" resultType="string">
+  SELECT CONCAT(nombres, ' ', apellidos) FROM paciente WHERE id = #{id}
+</select>
+
+<!-- Obtener nombre completo de medico -->
+<select id="obtenerNombreMedico" resultType="string">
+  SELECT CONCAT(nombres, ' ', apellidos) FROM medico WHERE id = #{id}
+</select>
+
+<!-- Obtener nombre completo de personal administrativo -->
+<select id="obtenerNombrePersonalAdministrativo" resultType="string">
+  SELECT CONCAT(nombres, ' ', apellidos) FROM personal_administrativo WHERE id = #{id}
+</select>
+
 </mapper>

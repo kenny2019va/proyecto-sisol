@@ -29,6 +29,23 @@ public class AutenticacionService {
                 throw new AutenticacionException("Contraseña incorrecta");
             }
 
+            // Obtener nombre completo según el rol
+            String nombreCompleto = null;
+            switch (usuario.getRol()) {
+                case ROLE_PACIENTE:
+                    nombreCompleto = authMapper.obtenerNombrePaciente(usuario.getId());
+                    break;
+                case ROLE_MEDICO:
+                    nombreCompleto = authMapper.obtenerNombreMedico(usuario.getId());
+                    break;
+                case ROLE_PERSONAL_ADMINISTRATIVO:
+                    nombreCompleto = authMapper.obtenerNombrePersonalAdministrativo(usuario.getId());
+                    break;
+                default:
+                    nombreCompleto = "Usuario";
+            }
+            usuario.setNombres(nombreCompleto);
+
             // if (PasswordHashUtils.checkPassword(usuario.getContrasenia(),
             // loginForm.getPassword())) {
 

@@ -1,6 +1,6 @@
 <!-- Fragmento: Navbar principal -->
 <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" style="z-index:1000;">
-  <div class="container-fluid">
+  <div class="container-fluid px-5">
     <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center" href="/inicio">
       <img src="/img/logo.svg" alt="Logo" width="auto" height="50" class="d-inline-block align-top">
@@ -68,7 +68,7 @@
         <div class="user-section text-center mb-4">
           <img th:if="${usuario != null}" th:src="@{'https://ui-avatars.com/api/?name=' + ${usuario.nombres}}" alt="Avatar" class="rounded-circle mb-2" width="60" height="60">
           <div th:if="${usuario != null}" class="fw-bold">[[${usuario.nombres}]]</div>
-          <div th:if="${usuario == null}" class="fw-bold">Invitado</div>
+          <div th:if="${usuario == null}" class="fw-bold"> </div>
         </div>
         <ul class="nav flex-column">
           <li class="nav-item">

@@ -17,7 +17,7 @@
     <div th:replace="fragments/navbar :: navbar"></div>
 
     <!-- Hero Section con Slider -->
-    <section class="hero-section pt-5" style="padding-top:50px;">
+    <section class="hero-section pt-5 seccion-hero" style="padding-top:50px;">
         <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="6000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -49,7 +49,7 @@
     </section>
 
     <!-- Qué te ofrecemos -->
-    <section class="container py-5">
+    <section class="container py-5 seccion-ofrecemos">
         <div class="row justify-content-center mb-4">
             <div class="col-12 text-center">
                 <h2 class="fw-bold mb-4">¿Qué te ofrecemos?</h2>
@@ -57,46 +57,40 @@
         </div>
         <div class="row g-4 justify-content-center">
             <div class="col-12 col-md-4">
-                <div class="card h-100 text-center shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <i class="bi bi-heart-pulse-fill fs-1 text-primary"></i>
-                        </div>
-                        <h5 class="card-title">Especialidades médicas</h5>
-                        <p class="card-text">Consulta general, pediatría, ginecología y más</p>
-                        <a href="#" class="btn btn-outline-primary">Ver más</a>
+                <div class="h-100 text-center p-4 bg-white rounded-3">
+                    <div class="mb-3">
+                        <i class="bi bi-heart-pulse-fill fs-1 text-primary"></i>
                     </div>
+                    <h5 class="card-title">Especialidades médicas</h5>
+                    <p class="card-text">Consulta general, pediatría, ginecología y más</p>
+                    <a href="#" class="btn btn-outline-success btn-outline-success-azul">Ver más</a>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="card h-100 text-center shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <i class="bi bi-calendar-check-fill fs-1 text-success"></i>
-                        </div>
-                        <h5 class="card-title">Reserva tu cita</h5>
-                        <p class="card-text">Agenda fácil desde casa, en menos de 5 minutos</p>
-                        <a href="#" class="btn btn-outline-success">Ver más</a>
+                <div class="h-100 text-center p-4 bg-white rounded-3">
+                    <div class="mb-3">
+                        <i class="bi bi-calendar-check-fill fs-1 text-success"></i>
                     </div>
+                    <h5 class="card-title">Reserva tu cita</h5>
+                    <p class="card-text">Agenda fácil desde casa, en menos de 5 minutos</p>
+                    <a href="#" class="btn btn-outline-success">Ver más</a>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="card h-100 text-center shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <i class="bi bi-credit-card-2-front-fill fs-1 text-info"></i>
-                        </div>
-                        <h5 class="card-title">Pagos y seguros</h5>
-                        <p class="card-text">Aceptamos SIS, pagos online y más opciones</p>
-                        <a href="#" class="btn btn-outline-info">Ver más</a>
+                <div class="h-100 text-center p-4 bg-white rounded-3">
+                    <div class="mb-3">
+                        <i class="bi bi-credit-card-2-front-fill fs-1 text-info"></i>
                     </div>
+                    <h5 class="card-title">Pagos y seguros</h5>
+                    <p class="card-text">Aceptamos SIS, pagos online y más opciones</p>
+                    <a href="#" class="btn btn-outline-info">Ver más</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Servicios más usados -->
-    <section class="container py-5">
+    <section class="container py-5 seccion-servicios-usados">
         <div class="row mb-4">
             <div class="col-12 text-center">
                 <h2 class="fw-bold">Servicios más usados</h2>
@@ -160,8 +154,26 @@
         </div>
     </section>
 
+     <!-- Banda de avisos -->
+     <section class="py-3 seccion-avisos" style="background: linear-gradient(90deg, #1a4a84 80%, #00a39c 100%); color: #fff;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <i class="bi bi-megaphone-fill fs-2"></i>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-wrap gap-3">
+                        <span><strong>Campaña de vacunación:</strong> Vacúnate gratis este mes. <a href="#" class="text-warning text-decoration-underline">Ver detalles</a></span>
+                        <span><strong>Cambio de horario:</strong> Sede Surco atenderá hasta las 6pm el 15/07.</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Mapa y Sedes -->
-    <section class="container py-5">
+    <section class="container py-5 seccion-sedes">
         <div class="row mb-4">
             <div class="col-12 text-center">
                 <h2 class="fw-bold">Nuestras sedes</h2>
@@ -175,56 +187,46 @@
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede Central</h5>
-                        <p class="card-text mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Av. Principal 123, Lima</p>
-                        <p class="card-text mb-1"><i class="bi bi-clock me-2"></i>Lun-Vie: 8am - 6pm</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm mt-2"><i class="bi bi-signpost-2"></i> Cómo llegar</a>
-                    </div>
-                </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Lince</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Arenales 1399, Lince, Lima</span>
             </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede Surco</h5>
-                        <p class="card-text mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Av. Surco 456, Lima</p>
-                        <p class="card-text mb-1"><i class="bi bi-clock me-2"></i>Lun-Sáb: 8am - 8pm</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm mt-2"><i class="bi bi-signpost-2"></i> Cómo llegar</a>
-                    </div>
-                </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud San Juan de Lurigancho</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Próceres de la Independencia 1771, SJL, Lima</span>
             </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede San Juan</h5>
-                        <p class="card-text mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Av. San Juan 789, Lima</p>
-                        <p class="card-text mb-1"><i class="bi bi-clock me-2"></i>Lun-Dom: 7am - 7pm</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm mt-2"><i class="bi bi-signpost-2"></i> Cómo llegar</a>
-                    </div>
-                </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Comas</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Túpac Amaru 1705, Comas, Lima</span>
+            </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Villa El Salvador</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Revolución 139, Urb. Pachacamac, VES, Lima</span>
+            </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Villa María del Triunfo</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Salvador Allende 295, VMT, Lima</span>
+            </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Surquillo</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Calle San Felipe 225, Surquillo, Lima</span>
+            </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Magdalena del Mar</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Jr. Ayacucho 540, Magdalena del Mar, Lima</span>
+            </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud Miraflores</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Angamos Oeste 402, Miraflores, Lima</span>
+            </div>
+            <div class="col mb-4">
+                <strong>SISOL Salud San Juan de Miraflores</strong><br>
+                <span class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Av. Los Héroes 1200, SJM, Lima</span>
             </div>
         </div>
     </section>
 
-    <!-- Banda de avisos -->
-    <section class="py-3" style="background: linear-gradient(90deg, #1a4a84 80%, #00a39c 100%); color: #fff;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <i class="bi bi-megaphone-fill fs-2"></i>
-                </div>
-                <div class="col">
-                    <div class="d-flex flex-wrap gap-3">
-                        <span><strong>Campaña de vacunación:</strong> Vacúnate gratis este mes. <a href="#" class="text-warning text-decoration-underline">Ver detalles</a></span>
-                        <span><strong>Cambio de horario:</strong> Sede Surco atenderá hasta las 6pm el 15/07.</span>
-                        <span><strong>Comunicado:</strong> Cerrado por feriado el 28 y 29 de julio.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Footer -->
     <footer class="mt-5" style="background: #222; color: #fff;">
@@ -233,10 +235,10 @@
                 <div class="col-12 col-md-4 mb-3 mb-md-0">
                     <h5 class="fw-bold">SISOL Salud</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50 text-decoration-none">Inicio</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">Especialidades</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">Reservar cita</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">Contacto</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Especialidades</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Reservar cita</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-4 mb-3 mb-md-0">
@@ -250,8 +252,8 @@
                 <div class="col-12 col-md-4">
                     <h5 class="fw-bold">Legal</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50 text-decoration-none">Política de privacidad</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">Uso de datos</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Política de privacidad</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Uso de datos</a></li>
                     </ul>
                     <div class="mt-3">
                         <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
@@ -261,12 +263,15 @@
                 </div>
             </div>
         </div>
-        <div class="text-center py-2" style="background: #111; font-size: 0.95rem;">© 2024 SISOL Salud. Todos los derechos reservados.</div>
+        <div class="text-center py-2" style="background: #111; font-size: 0.95rem;">© 2025 SISOL Salud. Todos los derechos reservados.</div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/navbar.js" defer></script>
     <script src="/js/login.js" defer></script>
+
+    <!-- Modal de Login -->
+    <div th:replace="fragments/login :: loginModal"></div>
 </body>
 </html>

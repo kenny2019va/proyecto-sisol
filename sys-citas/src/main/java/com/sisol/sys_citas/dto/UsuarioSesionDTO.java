@@ -14,7 +14,6 @@ import lombok.ToString;
 @ToString
 public class UsuarioSesionDTO {
     private Long id;
-    private String nombres;
     private String Correo;
     private String contrasenia;
     private Rol rol;

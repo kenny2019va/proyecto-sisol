@@ -15,17 +15,51 @@
     margin-bottom: 100px;
 }
 .hero-carousel img {
-    height: 400px;
+    width: 100%;
     object-fit: cover;
+    aspect-ratio: 21/7;
+    height: auto;
+    max-height: 500px;
+    border-radius: 0;
 }
-@media (max-width: 768px) {
-    .hero-cards-container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        bottom: -180px;
+@media (max-width: 991.98px) { /* Mobile y Tablet */
+    .hero-carousel img {
+        aspect-ratio: 3/4;
+        max-height: 420px;
     }
-} 
+    .hero-carousel .carousel-caption.hero-overlay {
+        padding: 0.8rem 0.7rem 1.2rem 0.7rem;
+        font-size: 0.98rem;
+        border-radius: 0;
+    }
+    .hero-carousel .carousel-caption.hero-overlay h5 {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+}
+@media (min-width: 992px) and (max-width: 1399.98px) { /* Desktop */
+    .hero-carousel img {
+        aspect-ratio: 21/7;
+        max-height: 400px;
+    }
+    .hero-carousel .carousel-caption.hero-overlay {
+        padding: 2.5rem 2rem 2.5rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 0;
+    }
+    .hero-carousel .carousel-caption.hero-overlay h5 {
+        font-size: 2.1rem;
+    }
+}
+@media (min-width: 1400px) { /* Desktop XL */
+    .hero-carousel img {
+        aspect-ratio: 21/6;
+        max-height: 500px;
+    }
+    .hero-carousel .carousel-caption.hero-overlay {
+        border-radius: 0;
+    }
+}
 
 /* Overlay y textos para hero slider */
 .hero-carousel .carousel-caption.hero-overlay {
@@ -55,4 +89,111 @@
   .hero-carousel .carousel-caption.hero-overlay h5 {
     font-size: 1.2rem;
   }
+} 
+
+/* Cards informativas "Qué te ofrecemos" */
+.card.shadow-sm {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card.shadow-sm:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(26,74,132,0.12);
+}
+
+/* Grid de servicios más usados */
+.row-cols-lg-6 > .col {
+    min-width: 150px;
+}
+.card .bi {
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+.btn-link {
+    color: #1a4a84;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.btn-link:hover {
+    color: #00a39c;
+}
+
+/* Mapa y sedes */
+.ratio {
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(26,74,132,0.08);
+    margin-bottom: 2rem;
+}
+.card .card-body {
+    padding: 1.2rem 1rem;
+}
+
+/* Banda de avisos */
+section[style*="linear-gradient"] {
+    font-size: 1.08rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border-radius: 0 !important;
+    box-shadow: 0 2px 12px rgba(26,74,132,0.08);
+    margin-bottom: 0;
+}
+section[style*="linear-gradient"] .bi {
+    vertical-align: middle;
+}
+
+/* Footer */
+footer {
+    border-radius: 0 !important;
+    box-shadow: 0 -2px 16px rgba(26,74,132,0.10);
+}
+footer h5 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+footer a.text-white-50:hover {
+    color: #fff !important;
+    text-decoration: underline;
+}
+footer .bi {
+    vertical-align: middle;
+}
+
+/* Espaciados generales */
+section, footer {
+    margin-bottom: 0;
+}
+@media (max-width: 768px) {
+    .row-cols-lg-6 > .col {
+        min-width: 120px;
+    }
+    footer {
+        border-radius: 0;
+    }
+} 
+
+/* Navbar: shadow más fuerte */
+.navbar {
+    box-shadow: 0 6px 32px rgba(26,74,132,0.18) !important;
+    border-radius: 0 !important;
+}
+
+/* Cards y secciones: sin bordes redondeados */
+.card, .ratio, section[style*="linear-gradient"], footer {
+    border-radius: 0 !important;
+}
+
+/* Banda de avisos sin borde redondeado */
+section[style*="linear-gradient"] {
+    border-radius: 0 !important;
+}
+
+/* Footer sin borde redondeado */
+footer {
+    border-radius: 0 !important;
 } 

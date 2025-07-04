@@ -1,19 +1,21 @@
 <!-- Fragmento: Navbar principal -->
-<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm px-lg-5" style="z-index:1000;">
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" style="z-index:1000;">
   <div class="container-fluid">
     <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center" href="/inicio">
       <img src="/img/logo.svg" alt="Logo" width="auto" height="50" class="d-inline-block align-top">
     </a>
     <!-- Botón hamburguesa (solo mobile) -->
-    <button class="navbar-toggler hamburger" type="button" aria-label="Menú" aria-controls="offCanvasMenu" aria-expanded="false">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="offCanvasMenu" aria-label="Menú">
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Menú Desktop -->
-    <div class="collapse navbar-collapse justify-content-end nav-menu">
-      <div class="d-flex align-items-center gap-3 ms-auto pe-2">
-        <!-- Menú de navegación -->
+    <div class="collapse navbar-collapse justify-content-end">
+      <div class="d-flex align-items-center gap-3">
         <ul class="navbar-nav me-3">
+          <li class="nav-item">
+            <a class="nav-link" href="/inicio">Inicio</a>
+          </li>
           <!-- Menú Paciente -->
           <li class="nav-item" th:if="${usuario == null or usuario.rol.name() == 'ROLE_PACIENTE'}">
             <a class="nav-link" href="/citas/agendar">Agendar una Cita</a>
@@ -42,44 +44,36 @@
             <a class="nav-link" href="/administrativo/catalogo">Catálogo de Especialidades y Servicios</a>
           </li>
         </ul>
-        <!-- Iconos (ejemplo: notificaciones y ayuda) -->
-        <a href="#" class="nav-link p-0 me-2 d-none d-lg-block" title="Notificaciones">
-          <i class="bi bi-bell fs-5"></i>
-        </a>
-        <a href="#" class="nav-link p-0 me-2 d-none d-lg-block" title="Ayuda">
-          <i class="bi bi-question-circle fs-5"></i>
-        </a>
         <!-- Avatar o icono usuario -->
-        <div th:if="${usuario != null}" class="mx-auto mb-2 rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:60px;height:60px;font-weight:bold;font-size:1.5rem;">
+        <div th:if="${usuario != null}" class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:60px;height:60px;font-weight:bold;font-size:1.5rem;">
           <span th:text="|${#strings.substring(usuario.nombres,0,1)}${usuario.nombres.contains(' ')? #strings.substring(usuario.nombres, usuario.nombres.indexOf(' ')+1, usuario.nombres.indexOf(' ')+2) : ''}|"></span>
         </div>
-        <div th:if="${usuario == null}" class="mx-auto mb-2">
+        <div th:if="${usuario == null}">
           <i class="bi bi-person-circle fs-1 text-secondary"></i>
         </div>
         <!-- Login/Logout -->
-        <a th:if="${usuario == null}" class="btn btn-outline-primary ms-2" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
-        <form th:if="${usuario != null}" th:action="@{/auth/logout}" method="post" class="d-inline ms-2">
+        <a th:if="${usuario == null}" class="btn btn-outline-primary" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
+        <form th:if="${usuario != null}" th:action="@{/auth/logout}" method="post" class="d-inline">
           <button class="btn btn-outline-danger" type="submit">Cerrar Sesión</button>
         </form>
       </div>
     </div>
-  </div>
-</nav>
-<!-- Off-canvas Mobile -->
-<div class="off-canvas-container">
-  <div class="off-canvas-backdrop"></div>
-  <div class="off-canvas-panel" id="offCanvasMenu" tabindex="-1" aria-modal="true" role="dialog">
-    <div class="off-canvas-header d-flex justify-content-end p-3">
-      <button class="close-button btn btn-link fs-2" aria-label="Cerrar menú">&times;</button>
-    </div>
-    <div class="off-canvas-body px-4">
-      <div class="user-section text-center mb-4">
-        <img th:if="${usuario != null}" th:src="@{'https://ui-avatars.com/api/?name=' + ${usuario.nombres}}" alt="Avatar" class="rounded-circle mb-2" width="60" height="60">
-        <div th:if="${usuario != null}" class="fw-bold">[[${usuario.nombres}]]</div>
-        <div th:if="${usuario == null}" class="fw-bold">Invitado</div>
+    <!-- Offcanvas Mobile -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvasMenu" aria-labelledby="offCanvasMenuLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offCanvasMenuLabel">Menú</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
       </div>
-      <nav class="mobile-menu mb-4">
+      <div class="offcanvas-body px-4">
+        <div class="user-section text-center mb-4">
+          <img th:if="${usuario != null}" th:src="@{'https://ui-avatars.com/api/?name=' + ${usuario.nombres}}" alt="Avatar" class="rounded-circle mb-2" width="60" height="60">
+          <div th:if="${usuario != null}" class="fw-bold">[[${usuario.nombres}]]</div>
+          <div th:if="${usuario == null}" class="fw-bold">Invitado</div>
+        </div>
         <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/inicio">Inicio</a>
+          </li>
           <!-- Menú Paciente -->
           <li class="nav-item" th:if="${usuario == null or usuario.rol.name() == 'ROLE_PACIENTE'}">
             <a class="nav-link" href="/citas/agendar">Agendar una Cita</a>
@@ -108,13 +102,13 @@
             <a class="nav-link" href="/administrativo/catalogo">Catálogo de Especialidades y Servicios</a>
           </li>
         </ul>
-      </nav>
-      <div class="login-section text-center">
-        <a th:if="${usuario == null}" class="btn btn-outline-primary w-100" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
-        <form th:if="${usuario != null}" th:action="@{/auth/logout}" method="post" class="d-inline">
-          <button class="btn btn-outline-danger w-100" type="submit">Cerrar Sesión</button>
-        </form>
+        <div class="login-section text-center mt-3">
+          <a th:if="${usuario == null}" class="btn btn-outline-primary w-100" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>
+          <form th:if="${usuario != null}" th:action="@{/auth/logout}" method="post" class="d-inline">
+            <button class="btn btn-outline-danger w-100" type="submit">Cerrar Sesión</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div> 
+</nav> 

@@ -40,4 +40,17 @@ document.addEventListener('DOMContentLoaded', function() {
       loginForm.prepend(div);
     }
   });
+
+  // Mostrar/ocultar contraseña
+  const passwordInput = document.getElementById('password');
+  const togglePasswordBtn = document.getElementById('togglePassword');
+  const iconPassword = document.getElementById('iconPassword');
+  if (togglePasswordBtn && passwordInput && iconPassword) {
+    togglePasswordBtn.addEventListener('click', function() {
+      const isPassword = passwordInput.type === 'password';
+      passwordInput.type = isPassword ? 'text' : 'password';
+      iconPassword.classList.toggle('bi-eye', !isPassword);
+      iconPassword.classList.toggle('bi-eye-slash', isPassword);
+    });
+  }
 }); 

@@ -1,6 +1,6 @@
 <!-- Fragmento: Navbar principal -->
-<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" style="z-index:1000;">
-  <div class="container-fluid px-5">
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" style="z-index:1000;" th:data-usuario-rol="${usuario?.rol?.name()}">
+  <div class="container-fluid px-3 px-md-4 px-lg-5 px-xl-6">
     <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center" href="/inicio">
       <img src="/img/logo.svg" alt="Logo" width="auto" height="50" class="d-inline-block align-top">
@@ -45,9 +45,7 @@
           </li>
         </ul>
         <!-- Avatar o icono usuario -->
-        <div th:if="${usuario != null}" class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:60px;height:60px;font-weight:bold;font-size:1.5rem;">
-          <span th:text="${#strings.substring(usuario.correo,0,1).toUpperCase()}"></span>
-        </div>
+        <img th:if="${usuario != null}" th:src="@{'https://ui-avatars.com/api/?name=' + ${usuario.correo}}" alt="Avatar" class="rounded-circle" width="60" height="60">
         <div th:if="${usuario == null}">
           <i class="bi bi-person-circle fs-1 text-secondary"></i>
         </div>

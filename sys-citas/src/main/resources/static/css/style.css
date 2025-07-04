@@ -95,14 +95,14 @@ section.bg-secondary, .bg-secondary {
 }
 
 .btn-outline-danger {
-  border: 1.5px solid var(--color-naranja);
-  color: var(--color-naranja);
+  border: 1.5px solid var(--color-turquesa);
+  color: var(--color-turquesa);
   background: transparent;
   transition: background 0.2s, color 0.2s;
 }
 .btn-outline-danger:hover {
-  background: var(--color-naranja);
-  color: var(--color-negro);
+  background: var(--color-turquesa);
+  color: var(--color-blanco);
 }
 
 /* Iconos lineales en turquesa */
